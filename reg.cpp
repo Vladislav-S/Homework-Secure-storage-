@@ -12,7 +12,10 @@ Reg::Reg(QWidget *parent) :
 
 Reg::~Reg()
 {
-    delete db;
+    //1 - я не понимаю как ты присваиваешь db
+    //2 - если подразумевается, что это указатель на объект, инициализированный в mainwindow, то выходит,
+    // что ты его два раза удаляешь
+    //delete db;
     delete ui;
 }
 
@@ -61,7 +64,7 @@ void Reg::on_pushButton_clicked()
 }
 
 
-
+//многократный повтор кода, рекомендую функцию замены символов на звездочки реализовать отдельно
 void Reg::on_lineEdit_2_textChanged(const QString &arg1)
 {
     if(sTextchanged){
